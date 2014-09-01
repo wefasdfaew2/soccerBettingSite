@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from tipps.models import Profile, Tip
+
+for model in (Profile, Tip):
+    admin.site.register(model)

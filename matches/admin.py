@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from matches.models import Group, Stage, Team, Match
+
+for model in (Group, Stage, Team, Match):
+    admin.site.register(model)

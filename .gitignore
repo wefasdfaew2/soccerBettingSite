@@ -1,6 +1,9 @@
 # Django specific
 settings.py
 
+# Vim
+.*.swp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

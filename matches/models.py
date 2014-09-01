@@ -1,12 +1,19 @@
 from django.db import models
 
 class Group(models.Model):
+    def __unicode__(self):
+        return self.name
     name = models.CharField(max_length=50)
 
 class Stage(models.Model):
+    def __unicode__(self):
+        return self.name
+
     name = models.CharField(max_length=50)
 
 class Team(models.Model):
+    def __unicode__(self):
+        return self.name
     name = models.CharField(max_length=50)
     flag = models.CharField(max_length=50)
     group = models.ForeignKey(Group)
@@ -20,6 +27,8 @@ class Team(models.Model):
     group_points = models.IntegerField(default=0)
 
 class Match(models.Model):
+    def __unicode__(self):
+        return self.home_team.name + ' - ' + self.away_team.name
     stage = models.ForeignKey(Stage)
     group = models.ForeignKey(Group)
     home_team = models.ForeignKey(Team, related_name='math_home_set')
